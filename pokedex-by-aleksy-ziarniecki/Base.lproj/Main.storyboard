@@ -343,12 +343,20 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Next Evolution: Venusaur LVL 32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m13-5F-e8e">
                                         <rect key="frame" x="157" y="2" width="274" height="24"/>
                                         <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="Csh-Q7-Mft"/>
                                             <constraint firstAttribute="height" constant="24" id="Ltb-fd-gN9"/>
+                                            <constraint firstAttribute="width" constant="300" id="NBr-2u-gjR"/>
                                             <constraint firstAttribute="width" constant="274" id="TJt-PB-a9a"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" red="1" green="0.8531001413" blue="0.1562516031" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NBr-2u-gjR"/>
+                                                <exclude reference="TJt-PB-a9a"/>
+                                            </mask>
+                                        </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.24079061390000001" green="0.4305929604" blue="1" alpha="1" colorSpace="calibratedRGB"/>

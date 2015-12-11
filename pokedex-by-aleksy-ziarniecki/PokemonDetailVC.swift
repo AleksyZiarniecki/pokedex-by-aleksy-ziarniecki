@@ -41,7 +41,6 @@ class PokemonDetailVC: UIViewController {
             self.updateUI()
         }
     }
-    
     func updateUI() {
         descriptionLbl.text = pokemon.description
         typeLbl.text = pokemon.type
@@ -51,21 +50,16 @@ class PokemonDetailVC: UIViewController {
         weightLbl.text = pokemon.weight
         baseAttackLbl.text = pokemon.attack
         
-        //if no evolution hide next image and print out "No Evolutions"
         if pokemon.nextEvolutionId == "" {
             evoLbl.text = "No Evolutions"
             nextEvoImg.hidden = true
-            
         } else {
+            var evolutionString = "Next Evolution: \(pokemon.nextEvolutionTxt)"
+            if pokemon.nextEvolutionLvl != "" { evolutionString += " Level \(pokemon.nextEvolutionLvl)" }
+            evoLbl.text = evolutionString
             nextEvoImg.hidden = false
             nextEvoImg.image = UIImage(named: pokemon.nextEvolutionId)
-            var str = "Next Evolution: \(pokemon.nextEvolutionTxt)"
-            
-            if pokemon.nextEvolutionLvl != "" {
-                str += " - LVL \(pokemon.nextEvolutionLvl)"
-            }
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

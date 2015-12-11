@@ -1,4 +1,4 @@
-//
+
 //  Pokemon.swift
 //  pokedex-by-aleksy-ziarniecki
 //
@@ -215,13 +215,15 @@ class Pokemon {
                                     self._nextEvolutionLvl = "\(lvl)"
                                 }
                                 
-                                print(self._nextEvolutionId)
-                                print(self._nextEvolutionTxt)
-                                print(self._nextEvolutionLvl)
+                                //print(self._nextEvolutionId)
+                                //print(self._nextEvolutionTxt)
+                               // print(self._nextEvolutionLvl)
                             }
                             
                         }
                     }
+                } else {
+                    self._nextEvolutionTxt = ""
                 }
         
         
