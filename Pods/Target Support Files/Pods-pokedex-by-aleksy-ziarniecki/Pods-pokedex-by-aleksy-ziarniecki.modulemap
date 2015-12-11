@@ -1,0 +1,6 @@
+framework module Pods_pokedex_by_aleksy_ziarniecki {
+  umbrella header "Pods-pokedex-by-aleksy-ziarniecki-umbrella.h"
+
+  export *
+  module * { export * }
+}
