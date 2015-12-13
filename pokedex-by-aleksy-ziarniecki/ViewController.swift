@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var musicPlayer: AVAudioPlayer!
     var inSearchMode = false
 
+    // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collection.delegate = self
@@ -49,6 +50,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    
+    // MARK: Utility Functions
     func parsePokemonCSV() {
         //Grabbing path of csv file
         let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
@@ -74,6 +77,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         
     }
+    // MARK: Collection View Delegates
+    
     //Everytime screen needs cell it will call this function
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         //If successfuly grabbed an empty cell of type PokemonCell - return it
@@ -129,10 +134,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         return CGSizeMake(105, 105)
     }
-
-   
+    
     @IBAction func musicBtn(sender: UIButton!) {
-        //Fading out music button when music stopped 
+        //Fading out music button when music stopped
         if musicPlayer.playing {
             musicPlayer.stop()
             sender.alpha = 0.2
@@ -140,8 +144,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer.play()
             sender.alpha = 1.0
         }
-        
     }
+
+   
+   
+        
+    
+    
+    // MARK: Search Bar Delegates
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         view.endEditing(true)
@@ -165,6 +175,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    // MARK: Navigation Function
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "PokemonDetailVC" {
             if let detailsVC = segue.destinationViewController as? PokemonDetailVC {
@@ -176,4 +187,3 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
 
 }
-

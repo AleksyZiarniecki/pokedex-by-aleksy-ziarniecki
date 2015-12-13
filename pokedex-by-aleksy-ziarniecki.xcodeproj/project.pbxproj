@@ -101,7 +101,6 @@
 				B3336C681C19CB1E009E6956 /* Assets.xcassets */,
 				B3336C6A1C19CB1E009E6956 /* LaunchScreen.storyboard */,
 				B3336C6D1C19CB1E009E6956 /* Info.plist */,
-				B3336C791C19E0C8009E6956 /* csv.swift */,
 				B3336C751C19CDD2009E6956 /* Pokemon.swift */,
 				B3336C771C19D4D7009E6956 /* PokemonCell.swift */,
 				B33682391C1AFA8A00765337 /* PokemonDetailVC.swift */,
@@ -113,6 +112,7 @@
 		B3FAB9621C1A117800AEC6A3 /* Resources  */ = {
 			isa = PBXGroup;
 			children = (
+				B3336C791C19E0C8009E6956 /* csv.swift */,
 				B3FAB9601C1A116B00AEC6A3 /* music.mp3 */,
 				B3336C731C19CCA1009E6956 /* pokemon.csv */,
 				B3FAB95E1C1A0E1300AEC6A3 /* Pokemon Solid.ttf */,

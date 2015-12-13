@@ -41,6 +41,8 @@ class PokemonDetailVC: UIViewController {
             self.updateUI()
         }
     }
+    
+    // MARK: UI Function
     func updateUI() {
         descriptionLbl.text = pokemon.description
         typeLbl.text = pokemon.type
@@ -67,6 +69,7 @@ class PokemonDetailVC: UIViewController {
         // Dispose of any resources that can be recreated
     }
     
+    //MARK: Navigation
     @IBAction func backBtnPressed(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

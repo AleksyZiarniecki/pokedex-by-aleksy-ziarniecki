@@ -23,6 +23,7 @@ class Pokemon {
     private var _nextEvolutionLvl: String!
     private var _pokemonUrl: String!
     
+    //MARK: Getters
     //Getters (encapsulation) to make sure nobody can destroy data
     
     var description: String {
@@ -106,6 +107,7 @@ class Pokemon {
         return _pokedexId
     }
     
+    //MARK: Initialiser
     init(name: String, pokedexId: Int) {
         self._name = name
         self._pokedexId = pokedexId
@@ -121,6 +123,7 @@ class Pokemon {
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 
+                // Weight, Height, Attack, & Defense
                 if let weight = dict["weight"] as? String {
                     //self used because in closure
                     self._weight = weight
@@ -170,7 +173,7 @@ class Pokemon {
                 
                 print(self._type)
                 
-                //Parsing out Pokemon description 
+                //Parsing out Pokemon description
                 if let descArr = dict["descriptions"] as? [Dictionary<String, String>] where descArr.count > 0 {
                     
                     if let url = descArr[0]["resource_uri"] {
@@ -195,7 +198,7 @@ class Pokemon {
                     self._description = ""
                 }
                 
-                
+                //Evolutions
                 //This will get called before the request*
                 if let evolutions = dict["evolutions"] as? [Dictionary<String,AnyObject>] where evolutions.count > 0 {
                     if let to = evolutions[0]["to"] as? String {
@@ -203,8 +206,9 @@ class Pokemon {
                         //Can't support mega pokemon but api still has mega data
                         if to.rangeOfString("mega") == nil {
                             if let uri = evolutions[0]["resource_uri"] as? String {
-                                
+                                // take the uri from "/api/v1/pokemon/###/ to ###/
                                 let newStr = uri.stringByReplacingOccurrencesOfString("/api/v1/pokemon/", withString: "")
+                                // take the string from ###/ to ###
                                 
                                 let num = newStr.stringByReplacingOccurrencesOfString("/", withString: "")
                                 
